@@ -1,0 +1,108 @@
+/*
+File: multtable.css
+GUI Assignment: HW3 Creating an Interactive Dynamic Table
+Julian Tran, UMass Lowell Computer Science, Julian_Tran@student.uml.edu
+Copyright (c) 2024 by Julian. All rights reserved. May be freely copied or
+excerpted for educational purposes with credit to the author.
+Created on October 29, 2024
+
+This css file styles the multtable.html file. It adds font colors, borders, 
+margins, and padding to the elements. Most importantly, it modifies the 
+table to be scrollable, have the table row header and column header fixed 
+as it scrolls and be a different color from the cells, and have the cells
+alternate colors to improve readability. The error message font color is 
+change to red.
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #357d38;
+    text-align: center;
+    border-bottom: solid;
+    border-color: #4CAF50;
+    border-width: medium;
+}
+
+h2 {
+    color: black;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #357d38;
+}
+
+#tableContainer {
+    max-height: 300px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 10;
+    background-color: #007bff; /* Same background for consistency */
+    border-color: black;
+}
+
+/* Sticky top header */
+th:not(:first-child) {
+    top: 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    border-color: black;
+}
+
+th {
+    color: #333;
+    position: sticky;
+    background-color: #007bff;
+}
+
+tr:nth-child(odd) { /* alternating row colors for readability */
+    background-color: #bbdcff;
+}
+
+tr:nth-child(even) { /* alternating row colors for readability */
+    background-color: #ffffff;
+}
+
+#errorMessage {
+    color: red;
+}
